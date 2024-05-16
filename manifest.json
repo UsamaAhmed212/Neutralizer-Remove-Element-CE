@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Number Neutralizer",
+    "version": "1.0.0",
+    "description": "Description of your extension",
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "commands",
+        "scripting",
+        "contextMenus"
+    ],
+    "action": {
+        "default_icon": {
+            "48": "icon48.png",
+            "128": "icon128.png"
+        }
+    },
+    "commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"windows": "Ctrl+X",
+				"mac": "Command+X",
+				"chromeos": "Ctrl+X",
+				"linux": "Ctrl+X"
+			}
+		}
+	},
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["remove.js"]
+        }
+    ],
+    "host_permissions": ["http://*/*", "https://*/*"]
+}
