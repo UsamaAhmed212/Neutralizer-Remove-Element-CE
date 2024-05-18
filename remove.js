@@ -1,7 +1,5 @@
 // Event listener for the When DOM fully loaded
 window.addEventListener("load", function(event) {
-    console.log('DOM fully loaded');
-
     var LAST_TARGET;
 
     document.addEventListener('contextmenu', function (event) {
