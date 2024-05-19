@@ -20,12 +20,15 @@
     "commands": {
 		"_execute_action": {
 			"suggested_key": {
-				"windows": "Ctrl+X",
-				"mac": "Command+X",
-				"chromeos": "Ctrl+X",
-				"linux": "Ctrl+X"
+				"windows": "Ctrl+Shift+X",
+				"mac": "Command+Shift+X",
+				"chromeos": "Ctrl+Shift+X",
+				"linux": "Ctrl+Shift+X"
 			}
-		}
+		},
+        "neutralize_element": {
+            "description": "Neutralize Element"
+        }
 	},
     "background": {
         "service_worker": "background.js"
@@ -34,7 +37,7 @@
         {
             "all_frames": false,
             "matches": [ "*://*/*" ],
-            "js": [ "remove.js", "ctre_content.js" ],
+            "js": [ "remove.js", "ctre_content.js", "neutralizer.js" ],
 		    "run_at": "document_end"
         }
     ],
